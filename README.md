@@ -5,6 +5,8 @@
 ![Status](https://img.shields.io/badge/status-experimental-orange)
 ![Python](https://img.shields.io/badge/python-3.11%2B-blue)
 
+Local-first geo-temporal context layer for LLM agents.
+
 Eva is an early public specification and prototype skeleton for a local-first geo-temporal context layer for LLM agents.
 
 It is not a finished product yet.
@@ -17,29 +19,27 @@ The current repository focuses on:
 - testing the basic ingest and query flow
 - keeping the design local-first and privacy-aware
 
-Local-first geo-temporal context layer for LLM agents.
-
-Eva is an early architecture and prototype skeleton for structured
-geo-temporal agent memory. It models events by time, place, source,
-confidence, risk, and relationships, then exposes bounded context packets for
-agent reasoning.
+Eva models events by time, place, source, confidence, risk, and relationships, then exposes bounded context packets for agent reasoning.
 
 Technical architecture: **Geo-Temporal Context Core**.
 
 ## Why
 
-Vector memory is useful, but it often loses the operational shape of real-world
-context: when something happened, where it happened, which source supports it,
-how confident the system is, and what changed over time.
+Vector memory is useful, but it often loses the operational shape of real-world context:
 
-Eva treats the LLM as an interpreter over structured context, not as the
-database of record.
+- when something happened
+- where it happened
+- which source supports it
+- how confident the system is
+- what changed over time
+
+Eva treats the LLM as an interpreter over structured context, not as the database of record.
 
 ## Status
 
 Eva is currently an early public specification and prototype skeleton.
 
-## What Works Today
+## What works today
 
 - Create an empty SQLite event table.
 - Validate synthetic event fixtures against JSON Schema.
@@ -48,7 +48,7 @@ Eva is currently an early public specification and prototype skeleton.
 - Query synthetic events back as bounded context packets.
 - Run tests without any real operational data.
 
-## What Is Not Implemented Yet
+## What is not implemented yet
 
 - No production collector.
 - No real data ingestion in the public repository.
@@ -57,7 +57,7 @@ Eva is currently an early public specification and prototype skeleton.
 - No temporal supersession engine.
 - No production-ready geospatial index.
 
-## Quick Start
+## Quick start
 
 Create a virtual environment and install development dependencies:
 
@@ -69,7 +69,7 @@ python -m pip install -r requirements-dev.txt
 
 On Windows PowerShell:
 
-```bash
+```powershell
 python -m venv .venv
 .venv\Scripts\Activate.ps1
 python -m pip install -r requirements-dev.txt
@@ -93,6 +93,30 @@ Query it back as a context packet:
 python scripts/query_events.py --db eva.db --region "Example Region" --since PT48H --risk high
 ```
 
+## Example output
+
+A basic query may return a context packet similar to this:
+
+```json
+{
+  "query": {
+    "region": "Example Region",
+    "since": "PT48H",
+    "risk": "high"
+  },
+  "events": [
+    {
+      "id": "synthetic-event-001",
+      "title": "Synthetic infrastructure event",
+      "source_type": "synthetic",
+      "confidence": "demo"
+    }
+  ]
+}
+```
+
+This is synthetic demo data only.
+
 ## Architecture
 
 ```mermaid
@@ -106,7 +130,7 @@ flowchart LR
   G --> H[Context Packets]
 ```
 
-## Repository Layout
+## Repository layout
 
 ```text
 docs/       Architecture, privacy model, origin, publishing notes
@@ -117,20 +141,32 @@ scripts/    Minimal synthetic ingest and query scripts
 tests/      Tests that use only synthetic fixtures
 ```
 
-## Security And Privacy
+## Security and privacy
 
-This repository is designed to be useful from zero without publishing
-operational data. It should not contain public data dumps, scraped corpora, real
-event records, generated reports, populated databases, map exports, logs,
-telemetry, local paths, hostnames, credentials, or tokens.
+This repository is designed to be useful from zero without publishing operational data.
 
-Use synthetic fixtures for public examples. Connect real sources only in your
-own private local deployment.
+It should not contain:
+
+- public data dumps
+- scraped corpora
+- real event records
+- generated reports
+- populated databases
+- map exports
+- logs
+- telemetry
+- local paths
+- hostnames
+- credentials
+- tokens
+
+Use synthetic fixtures for public examples.
+
+Connect real sources only in your own private local deployment.
 
 ## Origin
 
-Eva originated from local-first agent-memory experiments in OpenClaw, but the
-public core is runtime-agnostic.
+Eva originated from local-first agent-memory experiments in OpenClaw, but the public core is runtime-agnostic.
 
 ## Documentation
 
@@ -140,3 +176,7 @@ public core is runtime-agnostic.
 - [Privacy Model](docs/PRIVACY_MODEL.md)
 - [OpenClaw Origin](docs/OPENCLAW_ORIGIN.md)
 - [Maintainer Guide](docs/MAINTAINER_GUIDE.md)
+
+## License
+
+MIT.
