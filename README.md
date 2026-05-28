@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/eva-banner.png" alt="Eva — local-first geo-temporal context layer for LLM agents" width="100%">
+  <img src="eva-banner.png" alt="Eva — local-first geo-temporal context layer for LLM agents" width="100%">
 </p>
 # Eva
 
