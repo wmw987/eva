@@ -1,3 +1,6 @@
+<p align="center">
+  <img src="assets/eva-banner.png" alt="Eva — local-first geo-temporal context layer for LLM agents" width="100%">
+</p>
 # Eva
 
 [![Tests](https://github.com/wmw987/eva/actions/workflows/tests.yml/badge.svg)](https://github.com/wmw987/eva/actions/workflows/tests.yml)
