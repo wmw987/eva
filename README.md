@@ -134,6 +134,7 @@ public core is runtime-agnostic.
 
 ## Documentation
 
+- [Roadmap](ROADMAP.md)
 - [Geo-Temporal Context Core](docs/GEO_TEMPORAL_CONTEXT_CORE.md)
 - [Start From Zero](docs/START_FROM_ZERO.md)
 - [Privacy Model](docs/PRIVACY_MODEL.md)
