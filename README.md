@@ -1,5 +1,22 @@
 # Eva
 
+[![Tests](https://github.com/wmw987/eva/actions/workflows/tests.yml/badge.svg)](https://github.com/wmw987/eva/actions/workflows/tests.yml)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+![Status](https://img.shields.io/badge/status-experimental-orange)
+![Python](https://img.shields.io/badge/python-3.11%2B-blue)
+
+Eva is an early public specification and prototype skeleton for a local-first geo-temporal context layer for LLM agents.
+
+It is not a finished product yet.
+
+The current repository focuses on:
+
+- documenting the architecture
+- showing a minimal local prototype
+- using synthetic demo events
+- testing the basic ingest and query flow
+- keeping the design local-first and privacy-aware
+
 Local-first geo-temporal context layer for LLM agents.
 
 Eva is an early architecture and prototype skeleton for structured
