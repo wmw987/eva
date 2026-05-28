@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.eva.local/context-packet.schema.json",
+  "title": "Eva Context Packet",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["query", "results", "limits"],
+  "properties": {
+    "query": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": ["region", "time_window", "risk"],
+      "properties": {
+        "region": { "type": "string" },
+        "time_window": { "type": "string" },
+        "risk": { "enum": ["low", "medium", "high", "unknown"] }
+      }
+    },
+    "results": {
+      "type": "array",
+      "items": { "$ref": "event.schema.json" }
+    },
+    "limits": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["max_results", "source_policy"],
+      "properties": {
+        "max_results": { "type": "integer", "minimum": 1 },
+        "source_policy": { "enum": ["citations_required", "best_effort"] }
+      }
+    }
+  }
+}

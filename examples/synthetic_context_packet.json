@@ -1,0 +1,58 @@
+{
+  "query": {
+    "region": "Example Region",
+    "time_window": "PT48H",
+    "risk": "high"
+  },
+  "results": [
+    {
+      "id": "event_synthetic_001",
+      "title": "Synthetic disruption signal near example chokepoint",
+      "summary": "A synthetic test event used to validate geo-temporal schema behavior.",
+      "topic": "synthetic-risk",
+      "time": {
+        "observed_at": "2026-05-28T12:00:00Z",
+        "valid_from": "2026-05-28T12:00:00Z",
+        "valid_to": null,
+        "precision": "hour"
+      },
+      "geo": {
+        "label": "Example Chokepoint",
+        "country": null,
+        "region": "Example Region",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [0.0, 0.0]
+        },
+        "centroid": {
+          "lat": 0.0,
+          "lon": 0.0
+        },
+        "precision_m": 10000
+      },
+      "assessment": {
+        "risk": "high",
+        "confidence": "signal"
+      },
+      "provenance": {
+        "sources": [
+          {
+            "type": "test-fixture",
+            "ref": "fixture://synthetic_event_001",
+            "retrieved_at": "2026-05-28T12:05:00Z"
+          }
+        ]
+      },
+      "relations": [
+        {
+          "type": "related_to",
+          "target_id": "entity_synthetic_chokepoint"
+        }
+      ]
+    }
+  ],
+  "limits": {
+    "max_results": 10,
+    "source_policy": "citations_required"
+  }
+}

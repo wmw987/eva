@@ -1,0 +1,17 @@
+[project]
+name = "eva-geo-temporal-memory"
+version = "0.1.0"
+description = "Local-first geo-temporal context layer for LLM agents"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { file = "LICENSE" }
+dependencies = []
+
+[project.optional-dependencies]
+dev = [
+  "jsonschema>=4.19",
+  "referencing>=0.30"
+]
+
+[tool.setuptools]
+py-modules = []

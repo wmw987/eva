@@ -1,0 +1,30 @@
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# Local runtime artifacts
+*.db
+*.sqlite
+*.sqlite3
+*.log
+*.tmp
+*.cache
+
+# Generated data and exports
+reports/
+exports/
+map_exports/
+data/
+*.geojson
+
+# Environment and secrets
+.env
+.env.*
+*.pem
+*.key
+*.token
+
+# Editor locks
+.~lock.*
+*~
